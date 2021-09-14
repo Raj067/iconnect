@@ -4,3 +4,7 @@ from django.shortcuts import render
 
 def home(request, *args, **kwargs):
     return render(request, 'home.html', {})
+
+
+def contact(request, *args, **kwargs):
+    return render(request, 'contact-us.html', {})
