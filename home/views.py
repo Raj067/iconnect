@@ -12,3 +12,7 @@ def contact(request, *args, **kwargs):
 
 def about(request, *args, **kwargs):
     return render(request, 'about-us.html', {})
+
+
+def services(request, *args, **kwargs):
+    return render(request, 'our-services.html', {})
