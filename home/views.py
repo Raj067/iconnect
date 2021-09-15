@@ -8,3 +8,7 @@ def home(request, *args, **kwargs):
 
 def contact(request, *args, **kwargs):
     return render(request, 'contact-us.html', {})
+
+
+def about(request, *args, **kwargs):
+    return render(request, 'about-us.html', {})
