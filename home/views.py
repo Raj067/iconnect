@@ -4,7 +4,8 @@ from .forms import *
 # Create your views here.
 
 def home(request, *args, **kwargs):
-    return render(request, 'home.html', {})
+    data = Testimonial.objects.all()
+    return render(request, 'home.html', {'data': data})
 
 
 def contact(request, *args, **kwargs):

@@ -415,95 +415,15 @@
                 </div>
             </div>
         </section>
-        <!-- <section class="case-study">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-lg-4">
-                        <div class="heading-block wow bounceInLeft">
-                            <span>Acquire Innovative Services</span>
-                            <h2>A3logics Case Study</h2>
-                            <p>We have worked with Fortune 500 companies, medium and small enterprises around the globe.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 wow bounceInRight" data-wow-delay="0.3s">
-                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="feature-box">
-                                        <div class="media-div">
-                                            <img alt="Mobile application development"
-                                                src="https://cdn.a3logics.com/images/Mobile-application-development-1.png">
-                                        </div>
-                                        <div class="feature-content">
-                                            <h3>Mobile application development</h3>
-                                            <p>A chat app based on picture button for offering users with completely
-                                                unique experience of chatting on smartphone.</p>
-                                            <a class="btn"
-                                                href="https://www.a3logics.com/case-study-chatstasy-mobile-app-development">Case
-                                                Study</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="feature-box">
-                                        <div class="media-div">
-                                            <img alt="Transportation and logistics"
-                                                src="https://cdn.a3logics.com/images/Transportation-and-logistics-1.png">
-                                        </div>
-                                        <div class="feature-content">
-                                            <h3>Transportation and logistics</h3>
-                                            <p>We created an online service platform that was freight matching for
-                                                seamless connection between carriers and brokers.</p>
-                                            <a class="btn"
-                                                href="https://www.a3logics.com/case-study-transporation-and-logistics-it-solutions">Case
-                                                Study</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="feature-box">
-                                        <div class="media-div">
-                                            <img alt="Employee benefits"
-                                                src="https://cdn.a3logics.com/images/Employee-benefits-1.png">
-                                        </div>
-                                        <div class="feature-content">
-                                            <h3>Employee benefits</h3>
-                                            <p>Feature rich, automated HR solutions and benefits for benefit strategy
-                                                optimization such that perks could be delivered to the employees.</p>
-                                            <a class="btn"
-                                                href="https://www.a3logics.com/case-study-employee-benefits">Case
-                                                Study</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                <i class="fas fa-long-arrow-left"></i>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                <i class="fas fa-long-arrow-right"></i>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!--  -->
 
-        <!--  -->
         <section class="testimonial-section">
             <div class="shape-div">
-                <img class="images" src="https://cdn.a3logics.com/images/quotes-big.png" alt="a3logics quotes">
+                <img class="images" src="/static/images/quotes-big.png" alt="a3logics quotes">
             </div>
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-lg-5 col-md-6 wow bounceInLeft">
-                        <img alt="a3logics clients" src="https://cdn.a3logics.com/images/testimonials-img.png">
+                        <img alt="a3logics clients" src="/static/images/testimonials-img.png">
                     </div>
                     <div class="col-lg-7 col-md-6 wow bounceInRight">
                         <div class="heading-block wow fadeInUp" data-wow-delay="0.3s">
@@ -512,122 +432,41 @@
                         </div>
                         <div id="carouselExampleControls-1" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="crousel-content">
-                                        <div class="feature-box">
-                                            <p>The team at A3Logics, led in my case by Devesh Pareek and Ashish Jangir,
-                                                led the development of my mobile app (both iOS and Android platforms)
-                                                and delivered the product on time, at budget, with great integrity and
-                                                professional competence.</p>
-                                            <div class="media-div">
-                                                <img src="https://cdn.a3logics.com/images/icon/1.png"
-                                                    alt="client image">
-                                            </div>
-                                            <div class="feature-content">
-                                                <h3>David M. Traversi - MyEnPro</h3>
-                                                <h4>TIGER 21 San Francisco Chair | Veteran CEO, Advisor, and Board
-                                                    Member</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="crousel-content">
-                                        <div class="feature-box">
-                                            <p>We have been developing with this company for over 2 years. They are very
-                                                responsible and structured.</p>
-                                            <div class="media-div">
-                                                <img src="https://cdn.a3logics.com/images/icon/2.png"
-                                                    alt="client image">
-                                            </div>
-                                            <div class="feature-content">
-                                                <h3>David Velasquez</h3>
-                                                <h4>CEO at Rastrack</h4>
+                                {% for i in data %}
+                                    {% if forloop.counter == 1 %}
+                                        <div class="carousel-item active">
+                                            <div class="crousel-content">
+                                                <div class="feature-box">
+                                                    <p>{{i.content}}</p>
+                                                    <div class="media-div">
+                                                        <img src="{{i.image.url}}" alt="client image">
+                                                    </div>
+                                                    <div class="feature-content">
+                                                        <h3>{{i.full_name}}</h3>
+                                                        <h4>{{i.position}}</h4>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="crousel-content">
-                                        <div class="feature-box">
-                                            <p>I have thoroughly enjoyed my experience working with the team over the
-                                                last year and appreciated their hard work, support and guidance in
-                                                scaling and improving our product over the last couple of years and look
-                                                forward to continuing doing so.</p>
-                                            <div class="media-div">
-                                                <img src="https://cdn.a3logics.com/images/icon/3.png"
-                                                    alt="client image">
-                                            </div>
-                                            <div class="feature-content">
-                                                <h3>Billy Cillekens</h3>
-                                                <h4>School Master</h4>
+                                    {% else %}
+                                        <div class="carousel-item">
+                                            <div class="crousel-content">
+                                                <div class="feature-box">
+                                                    <p>{{i.content}}</p>
+                                                    <div class="media-div">
+                                                        <img src="{{i.image.url}}" alt="client image">
+                                                    </div>
+                                                    <div class="feature-content">
+                                                        <h3>{{i.full_name}}</h3>
+                                                        <h4>{{i.position}}</h4>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="crousel-content">
-                                        <div class="feature-box">
-                                            <p>Response to both apps has been positive. A3Logics meticulously documented
-                                                the entire process, providing detailed schedules and project reports.
-                                                Developers, designers, and project managers were all instantly
-                                                accessible. The team quickly attended to any issues and delivered
-                                                updates on schedule. </p>
-                                            <div class="media-div">
-                                                <img src="https://cdn.a3logics.com/images/icon/4.png"
-                                                    alt="client image">
-                                            </div>
-                                            <div class="feature-content">
-                                                <h3>Ram Sheshan</h3>
-                                                <h4>Founder & CEO, Tap-N-Chat(Chatstasy)</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item ">
-                                    <div class="crousel-content">
-                                        <div class="feature-box">
-                                            <p>We engaged with A3logics to do an initial analysis of our School
-                                                Management system, with a view to potentially take over the support for
-                                                the system. Overall they did a fantastic job in producing 3 documents -
-                                                Functional Spec, Architecture Doc and Recommendation doc.Their response
-                                                was second to none, answering emails within seconds and being available
-                                                for contact at almost any time of day. They delivered nearly 1000 pages
-                                                of professional documentation on time and to a very high level of
-                                                quality. A3logics are a great friendly and professional team to work
-                                                with and we will be continuing with them for future projects.</p>
-                                            <div class="media-div">
-                                                <img src="https://cdn.a3logics.com/images/icon/5.png"
-                                                    alt="client image">
-                                            </div>
-                                            <div class="feature-content">
-                                                <h3>Noel B.</h3>
-                                                <h4>JAPAN</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="crousel-content">
-                                        <div class="feature-box">
-                                            <p>A3Logics consistently tackled difficult projects, delivering functional
-                                                products and speedily troubleshooting any bugs. The team's agile
-                                                development skills met high standards. Their lean, streamlined approach
-                                                to project management ensured that projects were delivered within
-                                                schedule and budget.</p>
-                                            <div class="media-div">
-                                                <img src="https://cdn.a3logics.com/images/icon/4.png"
-                                                    alt="client image">
-                                            </div>
-                                            <div class="feature-content">
-                                                <h3>Ashok Kumar - Tiara top</h3>
-                                                <h4>CEO, Firma Networks</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    {% endif %}
+                                {% endfor %}
                             </div>
-                            <a href="https://www.a3logics.com/testimonials" class="btn mt-3"> Explore More </a>
+                            
                         </div>
                     </div>
                 </div>
@@ -667,7 +506,8 @@
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6 wow bounceInLeft">
-                        <div class="contact-inner">
+                        <img src="/static/images/teamwork.jpg" style="padding: 10px;" width="100%" height="100%" alt="">
+                        <!-- <div class="contact-inner">
                             <div class="heading-block">
                                 <h2>Contact Us</h2>
                                 <p>Guaranteed response within 24 Hrs. No obligation quote</p>
@@ -690,7 +530,7 @@
                                     alt="microsoft">
                                 <img src="https://cdn.a3logics.com/images/certifications-awards/iso.jpg" alt="iso">
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="col-lg-6 col-md-6 wow bounceInRight">
                         <div class="heading-block">
