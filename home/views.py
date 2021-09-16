@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import *
 
 # Create your views here.
 
@@ -7,6 +8,11 @@ def home(request, *args, **kwargs):
 
 
 def contact(request, *args, **kwargs):
+    form = CommentForm(request.POST or None)
+    if request.method == 'POST':
+        if form.is_valid():
+            print(form)
+            form.save()
     return render(request, 'contact-us.html', {})
 
 

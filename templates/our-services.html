@@ -42,21 +42,62 @@
                         <h2>
                             Request a service
                         </h2>
-                        <form method="post" class="form" novalidate>
+                        <form method="post" class="form" id="contact_form" action="/contact-us/">
                             {% csrf_token %}
                             <div>
-                                <input type="text" placeholder="Full Name" class="form-control bg-box-comment">
-                                <input type="text" placeholder="Company Name" class="form-control bg-box-comment">
-                                <input type="text" placeholder="Email Address" class="form-control bg-box-comment">
-                                <input type="text" placeholder="Phone Number" class="form-control bg-box-comment">
-                                <textarea placeholder="Message" name="" id="" cols="30" rows="6" class="form-control bg-box-comment"></textarea>
+                                <input id="i1" type="text" name="full_name" placeholder="Full Name" class="form-control bg-box-comment">
+                                <input id="i2" type="text" name="company_name" placeholder="Company Name" class="form-control bg-box-comment">
+                                <input id="i3" type="text" name="email_address" placeholder="Email Address" class="form-control bg-box-comment">
+                                <input id="i4" type="text" name="phone_number" placeholder="Phone Number" class="form-control bg-box-comment">
+                                <textarea id="i5" placeholder="Message" name="message" id="" cols="30" rows="6"
+                                    class="form-control bg-box-comment"></textarea>
                             </div>
                             <div class="col-sm-12 mt-3">
-                                <input type="submit" class="btn btn-primary center-block" value="Submit"
-                                    style="width: 100%;">
+                                <button type="submit" class="btn btn-primary" style="background-color: #4996cd;width: 100%;">Submit
+                                </button>
                             </div>
                         
                         </form>
+                        <script>
+                            let contactForm = document.getElementById('contact_form')
+                            contactForm.addEventListener('submit', function (e) {
+                                e.preventDefault();
+                                let thisForm = e.target
+                                const method = thisForm.getAttribute('method');
+                                const endpoint = thisForm.getAttribute('action');
+                                let data = new FormData(thisForm);
+                                let xhr = new XMLHttpRequest();
+                                xhr.open('post', endpoint, true);
+                                // console.log(thisForm)
+                                // // const csrftoken = getCookie('csrftoken');
+                                // // xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                                xhr.setRequestHeader('HTTP_X_REQUESTED_WITH', 'XMLHttpRequest')
+                                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
+                                xhr.responseText = 'json'
+                                xhr.onload = () => {
+
+                                }
+
+                                i1 = document.getElementById('i1')
+                                i2 = document.getElementById('i2')
+                                i3 = document.getElementById('i3')
+                                i4 = document.getElementById('i4')
+                                i5 = document.getElementById('i5')
+
+                                i1.value = ''
+                                i2.value = ''
+                                i3.value = ''
+                                i4.value = ''
+                                i5.value = ''
+                                alert('Your comment has been sent successfully')
+                                xhr.onerror = () => {
+                                    alert('There is an error')
+                                    // console.log(xhr.error)
+                                }
+                                xhr.send(data)
+
+                            })
+                        </script>
                     </div>
                 </div>
             </section>
