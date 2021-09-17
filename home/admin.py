@@ -11,6 +11,11 @@ class TestimonialAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'position', 'timestamp')
 
 
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('title', 'timestamp')
+
+
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(Testimonial, TestimonialAdmin)
 admin.site.site_header = 'Iconnect Company'
+admin.site.register(Post, PostAdmin)

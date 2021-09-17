@@ -23,3 +23,16 @@ class Testimonial(models.Model):
 
     def __str__(self) -> str:
         return self.full_name
+
+class Post(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.CharField(max_length=500)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+    
+    def save(self, *args, **kwargs):
+        # Save your object. After this line, value of custom_id will be 0 which is default value
+        self.id = 0
+        super(Post, self).save(*args, **kwargs)
