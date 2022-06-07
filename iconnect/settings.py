@@ -26,7 +26,7 @@ SECRET_KEY = 'do9ookmmnu=>RajabuMrisho<=ie-8y&s!81(ig!-(bo#k-f@c9_l(hlo%-e2@=&pq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'https://demo-iconnect.herokuapp.com', 'demo-iconnect.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'https://iconnect-tech.herokuapp.com', 'iconnect-tech.herokuapp.com']
 
 
 # Application definition
